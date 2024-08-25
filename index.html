@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RodWave Fan Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #333, #555);
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            letter-spacing: 2px;
+            animation: slideIn 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        nav {
+            background: #444;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #f39c12;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #about {
+            background: #2c2c2c;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        #about h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.2em;
+        }
+
+        #about p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        #music {
+            background: #333;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .audio-player {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            nav a {
+                margin: 0 10px;
+                font-size: 1em;
+            }
+
+            section {
+                padding: 30px 15px;
+            }
+
+            #about h2 {
+                font-size: 2em;
+            }
+
+            .audio-player {
+                flex-direction: column;
+            }
+
+            footer {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>RodWave Fan Page</h1>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#music">Music</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about">
+        <h2>About RodWave</h2>
+        <p>RodWave is a critically acclaimed artist whose emotional depth and powerful lyrics have resonated with fans globally. His music, which blends elements of hip-hop, R&B, and soul, tells the story of pain, love, and triumph. Explore this fan page to dive into his latest works and stay updated on his journey.</p>
+    </section>
+
+    <section id="music">
+        <h2>Latest Music</h2>
+        <div class="audio-player">
+            <audio controls>
+                <source src="rodwave_song.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <img src="rodwave_image1.jpg" alt="RodWave Image 1">
+            <img src="rodwave_image2.jpg" alt="RodWave Image 2">
+            <img src="rodwave_image3.jpg" alt="RodWave Image 3">
+            <img src="rodwave_image4.jpg" alt="RodWave Image 4">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 RodWave Fan Page. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Lazy Load Images
+        document.addEventListener("DOMContentLoaded", function() {
+            const lazyImages = document.querySelectorAll('img');
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const image = entry.target;
+                        image.src = image.dataset.src;
+                        observer.unobserve(image);
+                    }
+                });
+            });
+
+            lazyImages.forEach(image => {
+                imageObserver.observe(image);
+            });
+        });
+    </script>
+
+</body>
+</html>
